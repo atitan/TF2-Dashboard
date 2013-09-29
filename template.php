@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Dashboard</title>
+	<meta charset="utf-8">
 </head>
 <body>
 	<h1>Dashboard</h1>
@@ -9,7 +10,6 @@
   		<tr>
     		<th>玩家名稱</th>
     		<th>玩家ID</th>
-    		<th>玩家網址</th>
     		<th>事件原因</th>
     		<th>處置</th>
     		<th>起始時間</th>
@@ -28,7 +28,9 @@
   			for($o=0; $o < count($banData); $o++) { 
   				echo '<tr>';
     			for ($i=0; $i < count($banData[$o]); $i++) { 
-    				if ($i == 3) {
+    				if ($i == 0) {
+    					echo '<td><a class="nofollow" href="'.$banData[$o][$i+2].'" target="_blank">'.$banData[$o][$i].'</a></td>';
+    				} else if ($i == 4) {
     					if ($banData[$o][$i] == 'class') {
     						echo '<td>'.$action[$banData[$o][$i]].': '.$banData[$o][$i+1].'</td>';
     					} else {
@@ -42,7 +44,7 @@
     					} else {
     						echo '<td>'.date("Y-m-t H:i", $banData[$o][$i]).'</td>';
     					}
-    				} else if($i != 4) {
+    				} else if($i != 5 && $i != 2) {
     					echo '<td>'.$banData[$o][$i].'</td>';
     				} 				
     			}

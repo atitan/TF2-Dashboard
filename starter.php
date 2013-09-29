@@ -118,9 +118,9 @@ function getBanData()
 			$row[1], // player_name
 			$row[5], // steam_id
 			$row[2], // profile_url
+			$row[11], // reason
 			$row[8], // action
 			$row[9], // addition
-			$row[11], // reason
 			$row[6], // timestamp
 			$row[7], // expired
 			$row[3], // admin_name
